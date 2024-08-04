@@ -29,7 +29,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.className} ${playfair_display.variable} ${inter.variable} text-base font-normal text-secondary`}
+        className={`${inter.className} ${playfair_display.variable} ${inter.variable} text-base font-normal text-secondary bg-white`}
       >
         <Header />
         <ThemeConfig />

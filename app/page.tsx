@@ -1,3 +1,4 @@
+import ProductSection from '@/components/home/product-section'
 import SocialProofSection from '@/components/home/social-proof-section'
 import IconDownLeftArrow from '@/components/icons/icon-down-left-arrow'
 import Image from 'next/image'
@@ -13,7 +14,7 @@ const featuredImages = [
 
 const Home = () => {
   return (
-    <main className="min-h-screen space-y-20 px-10">
+    <main className="min-h-screen space-y-20 py-10">
       <div className="flex flex-col items-center gap-6 pt-20">
         <h1 className="px-[34px] text-center font-playfair-display text-[64px]/[76.8px] font-medium">
           Enjoy Your Favorite <br /> Coffee with Ngopi
@@ -45,6 +46,15 @@ const Home = () => {
         })}
       </div>
       <SocialProofSection />
+      <div className="flex flex-col items-center gap-20">
+        <div className="text-center">
+          <h2 className="text-2xl">Our products</h2>
+          <h3 className="font-playfair-display text-4xl">
+            From Top Quality Materials
+          </h3>
+        </div>
+        <ProductSection />
+      </div>
     </main>
   )
 }

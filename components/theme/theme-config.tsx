@@ -15,16 +15,28 @@ import { Label } from '@/components/ui/label'
 type IThemeColors = {
   primary: string
   secondary: string
+  gray: string
+  white: string
+  black: string
 }
 
 export const defaultTheme: { colors: IThemeColors } = {
   colors: {
     primary: '#6D1600',
     secondary: '#282A3A',
+    gray: '#F6F6F6',
+    white: '#FFFFFF',
+    black: '#000000',
   },
 }
 
-export const colors: (keyof IThemeColors)[] = ['primary', 'secondary']
+export const colors: (keyof IThemeColors)[] = [
+  'primary',
+  'secondary',
+  'gray',
+  'white',
+  'black',
+]
 
 const ThemeConfig = () => {
   const [theme, setTheme] = useState(defaultTheme)
@@ -35,6 +47,9 @@ const ThemeConfig = () => {
           :root {
             --primary: ${theme.colors.primary};
             --secondary: ${theme.colors.secondary};
+            --gray: ${theme.colors.gray};
+            --white: ${theme.colors.white};
+            --black: ${theme.colors.black};
           }
         `}
       </style>
@@ -49,12 +64,12 @@ const ThemeConfig = () => {
         </SheetTrigger>
         <SheetContent>
           <SheetHeader>
-            <SheetTitle className='text-left'>Customize theme</SheetTitle>
+            <SheetTitle className="text-left">Customize theme</SheetTitle>
             <SheetDescription asChild className="pt-6 text-left">
               <div className="space-y-3">
                 <h2 className="text-xl">
                   Colors
-                  <span className="block h-0.5 w-full rounded-full bg-primary mt-1"></span>
+                  <span className="mt-1 block h-0.5 w-full rounded-full bg-primary"></span>
                 </h2>
 
                 <div className="flex flex-col gap-3">

@@ -11,6 +11,9 @@ const config: Config = {
       colors: {
         primary: 'var(--primary)',
         secondary: 'var(--secondary)',
+        gray: 'var(--gray)',
+        white: 'var(--white)',
+        black: 'var(--black)',
       },
       fontFamily: {
         inter: ['var(--font-inter)'],
