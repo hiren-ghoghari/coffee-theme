@@ -1,10 +1,20 @@
+import SocialProofSection from '@/components/home/social-proof-section'
 import IconDownLeftArrow from '@/components/icons/icon-down-left-arrow'
+import Image from 'next/image'
 import React from 'react'
+
+const featuredImages = [
+  { name: 'featured-image-1', image: '/assets/images/featured-image-1.png' },
+  { name: 'featured-image-2', image: '/assets/images/featured-image-2.png' },
+  { name: 'featured-image-3', image: '/assets/images/featured-image-3.png' },
+  { name: 'featured-image-4', image: '/assets/images/featured-image-4.png' },
+  { name: 'featured-image-5', image: '/assets/images/featured-image-5.png' },
+]
 
 const Home = () => {
   return (
-    <main className="min-h-screen px-10">
-      <div className="flex flex-col items-center gap-6 py-20">
+    <main className="min-h-screen space-y-20 px-10">
+      <div className="flex flex-col items-center gap-6 pt-20">
         <h1 className="px-[34px] text-center font-playfair-display text-[64px]/[76.8px] font-medium">
           Enjoy Your Favorite <br /> Coffee with Ngopi
         </h1>
@@ -21,6 +31,20 @@ const Home = () => {
           <IconDownLeftArrow className="transition group-hover:translate-x-1 group-hover:translate-y-1" />
         </button>
       </div>
+      <div className="flex flex-wrap justify-center gap-4">
+        {featuredImages.map((featuredImage, key) => {
+          return (
+            <Image
+              key={key}
+              src={featuredImage.image}
+              width={250}
+              height={350}
+              alt={featuredImage.name}
+            />
+          )
+        })}
+      </div>
+      <SocialProofSection />
     </main>
   )
 }

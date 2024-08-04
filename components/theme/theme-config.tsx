@@ -49,8 +49,8 @@ const ThemeConfig = () => {
         </SheetTrigger>
         <SheetContent>
           <SheetHeader>
-            <SheetTitle>Customize theme</SheetTitle>
-            <SheetDescription asChild className="pt-6">
+            <SheetTitle className='text-left'>Customize theme</SheetTitle>
+            <SheetDescription asChild className="pt-6 text-left">
               <div className="space-y-3">
                 <h2 className="text-xl">
                   Colors
