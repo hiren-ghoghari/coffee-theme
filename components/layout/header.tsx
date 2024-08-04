@@ -1,37 +1,25 @@
-import IconSearch from "@/components/icons/icon-search";
-import IconShoppingBag from "@/components/icons/icon-shopping-bag";
-import Image from "next/image";
-import Link from "next/link";
-import React from "react";
+import IconSearch from '@/components/icons/icon-search'
+import IconShoppingBag from '@/components/icons/icon-shopping-bag'
+import Logo from '@/components/layout/logo'
+import NavBar from '@/components/nav/nav-bar'
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from '@/components/ui/sheet'
+import { Menu } from 'lucide-react'
+import React from 'react'
 
 const Header = () => {
   return (
-    <header className="h-20 px-20 flex items-center justify-between">
-      <Image src="/assets/images/logo.svg" width={40} height={40} alt="Logo" />
-      <nav className="text-xl">
-        <ul className="flex gap-14">
-          <li>
-            <Link href="/" className="hover:text-primary">
-              Products
-            </Link>
-          </li>
-          <li>
-            <Link href="/" className="hover:text-primary">
-              About us
-            </Link>
-          </li>
-          <li>
-            <Link href="/" className="hover:text-primary">
-              Testimonial
-            </Link>
-          </li>
-          <li>
-            <Link href="/" className="hover:text-primary">
-              Contact
-            </Link>
-          </li>
-        </ul>
-      </nav>
+    <header className="flex h-20 items-center justify-between px-20">
+      <Logo />
+      <div className="hidden lg:block">
+        <NavBar />
+      </div>
       <div className="flex gap-6">
         <button type="button" className="hover:text-primary">
           <IconSearch />
@@ -39,9 +27,26 @@ const Header = () => {
         <button type="button" className="hover:text-primary">
           <IconShoppingBag />
         </button>
+        <Sheet>
+          <SheetTrigger asChild className="lg:hidden">
+            <button type="button" className="hover:text-primary">
+              <Menu />
+            </button>
+          </SheetTrigger>
+          <SheetContent>
+            <SheetHeader>
+              <SheetTitle>
+                <Logo />
+              </SheetTitle>
+              <SheetDescription asChild className="pt-6">
+                <NavBar />
+              </SheetDescription>
+            </SheetHeader>
+          </SheetContent>
+        </Sheet>
       </div>
     </header>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header

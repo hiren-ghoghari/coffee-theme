@@ -1,11 +1,11 @@
-import IconDownLeftArrow from "@/components/icons/icon-down-left-arrow";
-import React from "react";
+import IconDownLeftArrow from '@/components/icons/icon-down-left-arrow'
+import React from 'react'
 
 const Home = () => {
   return (
-    <main className=" min-h-screen">
+    <main className="min-h-screen px-10">
       <div className="flex flex-col items-center gap-6 py-20">
-        <h1 className="text-[64px]/[76.8px] font-playfair-display font-medium text-center px-[34px]">
+        <h1 className="px-[34px] text-center font-playfair-display text-[64px]/[76.8px] font-medium">
           Enjoy Your Favorite <br /> Coffee with Ngopi
         </h1>
         <p className="text-center text-xl/8">
@@ -15,14 +15,14 @@ const Home = () => {
         </p>
         <button
           type="button"
-          className="px-12 py-6 bg-primary text-white rounded-[20px] font-playfair-display text-2xl flex gap-4 hover:bg-white hover:text-primary border border-primary group transition hover:scale-105"
+          className="group flex gap-4 rounded-[20px] border border-primary bg-primary px-12 py-6 font-playfair-display text-2xl text-white transition hover:scale-105 hover:bg-white hover:text-primary"
         >
           <span>Explore product</span>
-          <IconDownLeftArrow className="transition group-hover:translate-x-1 group-hover:translate-y-1"/>
+          <IconDownLeftArrow className="transition group-hover:translate-x-1 group-hover:translate-y-1" />
         </button>
       </div>
     </main>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home
