@@ -1,23 +1,23 @@
-import type { Config } from "tailwindcss";
+import type { Config } from 'tailwindcss'
 
 const config: Config = {
   content: [
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    './pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './components/**/*.{js,ts,jsx,tsx,mdx}',
+    './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
     extend: {
       colors: {
-        primary: "#6D1600",
-        secondary: "#282A3A",
+        primary: 'var(--primary)',
+        secondary: 'var(--secondary)',
       },
       fontFamily: {
-        inter: ["var(--font-inter)"],
-        "playfair-display": ["var(--font-playfair-display)"],
+        inter: ['var(--font-inter)'],
+        'playfair-display': ['var(--font-playfair-display)'],
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
-};
-export default config;
+  plugins: [require('tailwindcss-animate')],
+}
+export default config
