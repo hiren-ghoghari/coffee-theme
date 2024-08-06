@@ -1,7 +1,13 @@
 'use client'
 import ProductCard from '@/components/home/product-card'
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+} from '@/components/ui/carousel'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import React, { useState } from 'react'
+import Autoplay from 'embla-carousel-autoplay'
 
 const products = [
   {
@@ -137,21 +143,44 @@ const ProductSection = () => {
         className="flex flex-col items-center gap-10"
       >
         <div>
-          <TabsList className="flex-wrap">
+          <TabsList className="flex-wrap mx-10">
             <TabsTrigger value="latte">Latte</TabsTrigger>
             <TabsTrigger value="robusta">Robusta</TabsTrigger>
             <TabsTrigger value="acabica">Acabica</TabsTrigger>
           </TabsList>
         </div>
 
-        <TabsContent value={activeTab}>
-          <div className="flex flex-wrap gap-6">
-            {products
-              .filter((product) => product.category === activeTab)
-              .map((product, key) => {
-                return <ProductCard key={key} product={product} />
-              })}
-          </div>
+        <TabsContent value={activeTab} className="max-w-[300px] sm:max-w-[600px] lg:max-w-[900px] xl:max-w-[1200px]">
+          <Carousel
+            opts={{
+              align: 'start',
+              loop: true,
+              slidesToScroll: 1,
+              // dragFree: true,
+            }}
+            plugins={[
+              Autoplay({
+                delay: 2000,
+              }),
+            ]}
+          >
+            <CarouselContent>
+              {Array.from({ length: 2 }).map((_, index) =>
+                products
+                  .filter((product) => product.category === activeTab)
+                  .map((product, key) => {
+                    return (
+                      <CarouselItem
+                        key={key}
+                        className="sm:basis-1/2 lg:basis-1/3 xl:basis-1/4"
+                      >
+                        <ProductCard product={product} />
+                      </CarouselItem>
+                    )
+                  }),
+              )}
+            </CarouselContent>
+          </Carousel>
         </TabsContent>
       </Tabs>
     </div>

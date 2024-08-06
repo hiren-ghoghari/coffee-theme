@@ -7,7 +7,7 @@ import React from 'react'
 
 const ProductCard = ({ product }: { product: IProduct }) => {
   return (
-    <div>
+    <div className='cursor-pointer max-w-[300px]'>
       <Image src={product.image} width={300} height={240} alt={product.name} />
       <div className="space-y-4 p-4 max-w-[300px]">
         <h4 className="text-2xl">{product.name}</h4>

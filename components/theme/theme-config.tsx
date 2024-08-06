@@ -57,7 +57,7 @@ const ThemeConfig = () => {
         <SheetTrigger asChild>
           <button
             type="button"
-            className="fixed bottom-6 right-6 rounded-full border border-primary bg-primary p-2 text-white transition hover:scale-105 hover:bg-white hover:text-primary"
+            className="fixed z-40 bottom-6 right-6 rounded-full border border-primary bg-primary p-2 text-white transition hover:scale-105 hover:bg-white hover:text-primary"
           >
             <Palette />
           </button>
